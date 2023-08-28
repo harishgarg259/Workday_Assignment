@@ -1,0 +1,41 @@
+//
+//  WebError.swift
+//  Workday
+//
+//  Created by Harish Garg on 27/08/23.
+//
+
+import Foundation
+
+public enum WebError: Error {
+    
+    case noInternetConnection
+    case networkLost
+    case timeout
+    case invalidRequest(String)
+    case parse
+    case unauthorized
+    case other(String)
+}
+
+extension WebError {
+    
+    var description: String {
+        switch self {
+        case .noInternetConnection:
+            return "No Internet Connection."
+        case .timeout:
+            return "The request timed out."
+        case .invalidRequest(let url):
+            return "URLRequest is not valid: \(url)"
+        case .unauthorized:
+            return "Invalid credentials. Please check your username or password"
+        case .parse:
+            return "Unable to parse json"
+        case .other(let error):
+            return error
+        case .networkLost:
+            return "No Internet Connection."
+        }
+    }
+}

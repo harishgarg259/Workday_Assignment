@@ -13,7 +13,24 @@
 		38F0F6B02A99E077002A1F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F0F6AE2A99E077002A1F3C /* Main.storyboard */; };
 		38F0F6B22A99E07F002A1F3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38F0F6B12A99E07F002A1F3C /* Assets.xcassets */; };
 		38F0F6B52A99E07F002A1F3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38F0F6B32A99E07F002A1F3C /* LaunchScreen.storyboard */; };
+		38F0F6C32A99E6AB002A1F3C /* WorkdayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6C22A99E6AB002A1F3C /* WorkdayTests.swift */; };
+		38F0F6CD2A9C28D9002A1F3C /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6CC2A9C28D9002A1F3C /* WebAPI.swift */; };
+		38F0F6CF2A9C292F002A1F3C /* RequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6CE2A9C292F002A1F3C /* RequestUrl.swift */; };
+		38F0F6D12A9C2A64002A1F3C /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6D02A9C2A64002A1F3C /* RestManager.swift */; };
+		38F0F6D32A9C2B48002A1F3C /* WebError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6D22A9C2B48002A1F3C /* WebError.swift */; };
+		38F0F6D52A9C2D33002A1F3C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6D42A9C2D33002A1F3C /* Reachability.swift */; };
+		38F0F6D82A9C2FF4002A1F3C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6D72A9C2FF4002A1F3C /* AppConstant.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38F0F6C42A99E6AB002A1F3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F0F69D2A99E077002A1F3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38F0F6A42A99E077002A1F3C;
+			remoteInfo = Workday;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		38F0F6A52A99E077002A1F3C /* Workday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +41,25 @@
 		38F0F6B12A99E07F002A1F3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38F0F6B42A99E07F002A1F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38F0F6B62A99E080002A1F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38F0F6C02A99E6AB002A1F3C /* WorkdayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkdayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F0F6C22A99E6AB002A1F3C /* WorkdayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkdayTests.swift; sourceTree = "<group>"; };
+		38F0F6CC2A9C28D9002A1F3C /* WebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		38F0F6CE2A9C292F002A1F3C /* RequestUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUrl.swift; sourceTree = "<group>"; };
+		38F0F6D02A9C2A64002A1F3C /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		38F0F6D22A9C2B48002A1F3C /* WebError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebError.swift; sourceTree = "<group>"; };
+		38F0F6D42A9C2D33002A1F3C /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		38F0F6D72A9C2FF4002A1F3C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		38F0F6A22A99E077002A1F3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F0F6BD2A99E6AB002A1F3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				38F0F6A72A99E077002A1F3C /* Workday */,
+				38F0F6C12A99E6AB002A1F3C /* WorkdayTests */,
 				38F0F6A62A99E077002A1F3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				38F0F6A52A99E077002A1F3C /* Workday.app */,
+				38F0F6C02A99E6AB002A1F3C /* WorkdayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +90,93 @@
 		38F0F6A72A99E077002A1F3C /* Workday */ = {
 			isa = PBXGroup;
 			children = (
-				38F0F6A82A99E077002A1F3C /* AppDelegate.swift */,
-				38F0F6AA2A99E077002A1F3C /* SceneDelegate.swift */,
-				38F0F6AC2A99E077002A1F3C /* ViewController.swift */,
+				38F0F6CB2A9C288F002A1F3C /* ApplicationLayer */,
+				38F0F6CA2A9C287F002A1F3C /* Presentation */,
+				38F0F6C92A9C2873002A1F3C /* NetworkLayer */,
+				38F0F6D62A9C2FD5002A1F3C /* Utilities */,
 				38F0F6AE2A99E077002A1F3C /* Main.storyboard */,
 				38F0F6B12A99E07F002A1F3C /* Assets.xcassets */,
 				38F0F6B32A99E07F002A1F3C /* LaunchScreen.storyboard */,
 				38F0F6B62A99E080002A1F3C /* Info.plist */,
 			);
 			path = Workday;
+			sourceTree = "<group>";
+		};
+		38F0F6C12A99E6AB002A1F3C /* WorkdayTests */ = {
+			isa = PBXGroup;
+			children = (
+				38F0F6C22A99E6AB002A1F3C /* WorkdayTests.swift */,
+			);
+			path = WorkdayTests;
+			sourceTree = "<group>";
+		};
+		38F0F6C92A9C2873002A1F3C /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				38F0F6CE2A9C292F002A1F3C /* RequestUrl.swift */,
+				38F0F6CC2A9C28D9002A1F3C /* WebAPI.swift */,
+				38F0F6D02A9C2A64002A1F3C /* RestManager.swift */,
+				38F0F6D22A9C2B48002A1F3C /* WebError.swift */,
+				38F0F6D42A9C2D33002A1F3C /* Reachability.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		38F0F6CA2A9C287F002A1F3C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				38F0F6D92A9C320B002A1F3C /* SearchImagesViewController */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		38F0F6CB2A9C288F002A1F3C /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				38F0F6A82A99E077002A1F3C /* AppDelegate.swift */,
+				38F0F6AA2A99E077002A1F3C /* SceneDelegate.swift */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		38F0F6D62A9C2FD5002A1F3C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				38F0F6D72A9C2FF4002A1F3C /* AppConstant.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		38F0F6D92A9C320B002A1F3C /* SearchImagesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38F0F6DC2A9C3249002A1F3C /* ViewController */,
+				38F0F6DB2A9C3240002A1F3C /* ViewModel */,
+				38F0F6DA2A9C3238002A1F3C /* Model */,
+			);
+			path = SearchImagesViewController;
+			sourceTree = "<group>";
+		};
+		38F0F6DA2A9C3238002A1F3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		38F0F6DB2A9C3240002A1F3C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		38F0F6DC2A9C3249002A1F3C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				38F0F6AC2A99E077002A1F3C /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +199,24 @@
 			productReference = 38F0F6A52A99E077002A1F3C /* Workday.app */;
 			productType = "com.apple.product-type.application";
 		};
+		38F0F6BF2A99E6AB002A1F3C /* WorkdayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38F0F6C82A99E6AB002A1F3C /* Build configuration list for PBXNativeTarget "WorkdayTests" */;
+			buildPhases = (
+				38F0F6BC2A99E6AB002A1F3C /* Sources */,
+				38F0F6BD2A99E6AB002A1F3C /* Frameworks */,
+				38F0F6BE2A99E6AB002A1F3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38F0F6C52A99E6AB002A1F3C /* PBXTargetDependency */,
+			);
+			name = WorkdayTests;
+			productName = WorkdayTests;
+			productReference = 38F0F6C02A99E6AB002A1F3C /* WorkdayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +229,10 @@
 				TargetAttributes = {
 					38F0F6A42A99E077002A1F3C = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					38F0F6BF2A99E6AB002A1F3C = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 38F0F6A42A99E077002A1F3C;
 					};
 				};
 			};
@@ -116,6 +250,7 @@
 			projectRoot = "";
 			targets = (
 				38F0F6A42A99E077002A1F3C /* Workday */,
+				38F0F6BF2A99E6AB002A1F3C /* WorkdayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +266,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38F0F6BE2A99E6AB002A1F3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,13 +280,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38F0F6D82A9C2FF4002A1F3C /* AppConstant.swift in Sources */,
 				38F0F6AD2A99E077002A1F3C /* ViewController.swift in Sources */,
+				38F0F6D32A9C2B48002A1F3C /* WebError.swift in Sources */,
+				38F0F6CF2A9C292F002A1F3C /* RequestUrl.swift in Sources */,
 				38F0F6A92A99E077002A1F3C /* AppDelegate.swift in Sources */,
+				38F0F6D12A9C2A64002A1F3C /* RestManager.swift in Sources */,
 				38F0F6AB2A99E077002A1F3C /* SceneDelegate.swift in Sources */,
+				38F0F6D52A9C2D33002A1F3C /* Reachability.swift in Sources */,
+				38F0F6CD2A9C28D9002A1F3C /* WebAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38F0F6BC2A99E6AB002A1F3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38F0F6C32A99E6AB002A1F3C /* WorkdayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38F0F6C52A99E6AB002A1F3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38F0F6A42A99E077002A1F3C /* Workday */;
+			targetProxy = 38F0F6C42A99E6AB002A1F3C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		38F0F6AE2A99E077002A1F3C /* Main.storyboard */ = {
@@ -216,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -292,8 +456,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,8 +484,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,6 +497,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		38F0F6C62A99E6AB002A1F3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zonetech.health37.WorkdayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workday.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Workday";
+			};
+			name = Debug;
+		};
+		38F0F6C72A99E6AB002A1F3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zonetech.health37.WorkdayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Workday.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Workday";
 			};
 			name = Release;
 		};
@@ -351,6 +553,15 @@
 			buildConfigurations = (
 				38F0F6BA2A99E080002A1F3C /* Debug */,
 				38F0F6BB2A99E080002A1F3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38F0F6C82A99E6AB002A1F3C /* Build configuration list for PBXNativeTarget "WorkdayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38F0F6C62A99E6AB002A1F3C /* Debug */,
+				38F0F6C72A99E6AB002A1F3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
