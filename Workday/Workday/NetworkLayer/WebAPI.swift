@@ -17,11 +17,11 @@ extension WebAPI {
     }
 }
 
+//MARK: - Prepare URL REQUEST
 class WebAPI {
     
     var requestHttpHeaders: [String:String] = [:]
 
-    //MARK: - Prepare URL REQUEST
     private func prepareRequest(withURL url: String, params: [String:Any], httpMethod: HttpMethod, specialPUTParams: String? = nil, specialGETParams: String? = nil) -> URLRequest? {
         
         guard let url = URL(string: url) else { return nil }
@@ -76,7 +76,7 @@ class WebAPI {
     }
 }
 
-
+//MARK: - Create Nasa's Request
 extension WebAPI{
     
     enum NasaRequest
@@ -84,7 +84,6 @@ extension WebAPI{
         case searchImages
     }
     
-    //MARK: - Create Nasa's Request
     public func createNasaRequest(params: [String:Any] = [:], type : NasaRequest, specialPUTParams: String? = nil, specialGETParams: String? = nil) -> URLRequest? {
         
         var requestURL : String?

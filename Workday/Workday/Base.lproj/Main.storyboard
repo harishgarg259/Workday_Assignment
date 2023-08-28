@@ -1,24 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pNh-Tp-87f">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Search Images View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchImagesViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eex-dJ-Guc">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Search images by name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPm-H3-YNc" customClass="SearchTextField" customModule="Workday" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="10" width="361" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="TAW-Ml-x9o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="alphabet"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeftCustom">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" name="ballerPlaceholder"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="b9Y-F4-jSP"/>
+                                        </connections>
+                                    </textField>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-jk-e5s">
+                                        <rect key="frame" x="16" y="54" width="361" height="695"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="C7f-oh-8sO"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="aFC-1a-Wo1"/>
+                                        </connections>
+                                    </tableView>
+                                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIk-FD-lkM">
+                                        <rect key="frame" x="16" y="55" width="361" height="694"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Images Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATF-Se-EHk">
+                                                <rect key="frame" x="30" y="256" width="301" height="22.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="19"/>
+                                                <color key="textColor" name="greyLight"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search with another keywords." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEa-Lr-gxX">
+                                                <rect key="frame" x="30" y="288.33333333333331" width="301" height="17.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                                <color key="textColor" name="greyLight"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="DEa-Lr-gxX" firstAttribute="leading" secondItem="TIk-FD-lkM" secondAttribute="leading" constant="30" id="7dU-Op-k6w"/>
+                                            <constraint firstItem="ATF-Se-EHk" firstAttribute="leading" secondItem="TIk-FD-lkM" secondAttribute="leading" constant="30" id="deM-bt-hTX"/>
+                                            <constraint firstAttribute="trailing" secondItem="ATF-Se-EHk" secondAttribute="trailing" constant="30" id="nRK-2B-wmz"/>
+                                            <constraint firstItem="DEa-Lr-gxX" firstAttribute="top" secondItem="ATF-Se-EHk" secondAttribute="bottom" constant="10" id="u3P-x7-wEO"/>
+                                            <constraint firstItem="ATF-Se-EHk" firstAttribute="centerY" secondItem="TIk-FD-lkM" secondAttribute="centerY" constant="-80" id="x9Z-tk-XDT"/>
+                                            <constraint firstAttribute="trailing" secondItem="DEa-Lr-gxX" secondAttribute="trailing" constant="30" id="zHi-Iw-Gem"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TIk-FD-lkM" firstAttribute="trailing" secondItem="FFa-jk-e5s" secondAttribute="trailing" id="0Oo-3a-7A5"/>
+                                    <constraint firstAttribute="bottom" secondItem="FFa-jk-e5s" secondAttribute="bottom" id="KQp-fU-ckf"/>
+                                    <constraint firstAttribute="trailing" secondItem="SPm-H3-YNc" secondAttribute="trailing" constant="16" id="QFJ-fw-Ewf"/>
+                                    <constraint firstItem="FFa-jk-e5s" firstAttribute="top" secondItem="SPm-H3-YNc" secondAttribute="bottom" id="Z66-Cp-9yY"/>
+                                    <constraint firstItem="FFa-jk-e5s" firstAttribute="leading" secondItem="eex-dJ-Guc" secondAttribute="leading" constant="16" id="f4R-gh-i6A"/>
+                                    <constraint firstItem="SPm-H3-YNc" firstAttribute="leading" secondItem="eex-dJ-Guc" secondAttribute="leading" constant="16" id="mm4-jd-NHI"/>
+                                    <constraint firstItem="TIk-FD-lkM" firstAttribute="top" secondItem="FFa-jk-e5s" secondAttribute="top" constant="1" id="pEY-aF-odC"/>
+                                    <constraint firstItem="SPm-H3-YNc" firstAttribute="top" secondItem="eex-dJ-Guc" secondAttribute="top" constant="10" id="qQU-Zm-diR"/>
+                                    <constraint firstAttribute="trailing" secondItem="FFa-jk-e5s" secondAttribute="trailing" constant="16" id="xvJ-8C-49s"/>
+                                    <constraint firstItem="TIk-FD-lkM" firstAttribute="bottom" secondItem="FFa-jk-e5s" secondAttribute="bottom" id="ykb-fD-7W2"/>
+                                    <constraint firstItem="TIk-FD-lkM" firstAttribute="leading" secondItem="FFa-jk-e5s" secondAttribute="leading" id="zZb-eH-4LS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eex-dJ-Guc" secondAttribute="bottom" id="BW6-am-xKR"/>
+                            <constraint firstAttribute="trailing" secondItem="eex-dJ-Guc" secondAttribute="trailing" id="M0b-kv-ofu"/>
+                            <constraint firstItem="eex-dJ-Guc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dcP-kv-P9f"/>
+                            <constraint firstItem="eex-dJ-Guc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fmg-5g-KU4"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BbG-dc-3J8"/>
+                    <connections>
+                        <outlet property="noRecordView" destination="TIk-FD-lkM" id="8I9-XP-6NZ"/>
+                        <outlet property="searchTextField" destination="SPm-H3-YNc" id="lJM-uw-0gv"/>
+                        <outlet property="searchedImagesTableView" destination="FFa-jk-e5s" id="yvs-pH-feu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1023.6641221374045" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rtZ-hi-LMC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pNh-Tp-87f" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Erj-Y1-6VK">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="o9e-pP-suw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5O-dh-Qmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="ballerPlaceholder">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyLight">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
