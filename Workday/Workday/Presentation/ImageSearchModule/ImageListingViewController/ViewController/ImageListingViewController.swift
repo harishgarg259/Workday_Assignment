@@ -16,6 +16,7 @@ class ImageListingViewController: UIViewController {
     
     //MARK: Variables
     let viewModel = SearchImageViewModel()
+    private let refreshControl = UIRefreshControl()
     
     //MARK: Class Life Cycle
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ extension ImageListingViewController {
     private func setupUI() {
         setupNavigationBar()
         configureTableView()
+        setupRefreshControl()
     }
     
     private func setupNavigationBar() {
@@ -42,15 +44,13 @@ extension ImageListingViewController {
 
         //Search field callback
         searchTextField.userStoppedTypingHandler = { [weak self] in
-            if let criteria = self?.searchTextField.text {
-                if criteria.isEmpty || criteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    self?.viewModel.records?.removeAll()
-                    self?.reloadTable()
-                } else if criteria.count > AppConstants.searchCharacterLimit {
-                    // Show loading indicator
-                    self?.searchTextField.showLoadingIndicator()
-                    self?.searchRecords(searchString: criteria)
-                }
+            if self?.searchTextField.hasText() ?? false {
+                // Fetch record from API
+                self?.searchTextField.showLoadingIndicator()
+                self?.searchRecords(searchString: self?.searchTextField.text ?? "")
+            }else{
+                self?.viewModel.records?.removeAll()
+                self?.reloadTable()
             }
         } as (() -> Void)
     }
@@ -60,8 +60,25 @@ extension ImageListingViewController {
     }
     
     private func reloadTable(){
+        self.noRecordView.isHidden = (self.searchTextField.text?.isEmpty ?? true) ? true : !(self.viewModel.records?.isEmpty ?? false)
+        self.refreshControl.endRefreshing()
         self.searchedImagesTableView.reloadData()
+        self.searchTextField.stopLoadingIndicator()
     }
+    
+    private func setupRefreshControl(){
+        refreshControl.addTarget(self, action: #selector(refreshSearchData), for: .valueChanged)
+        self.searchedImagesTableView.refreshControl = refreshControl
+    }
+    
+    @objc func refreshSearchData(refreshControl: UIRefreshControl) {
+        if self.searchTextField.hasText() {
+            searchRecords(searchString: self.searchTextField.text ?? "")
+        }else{
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
 }
 
 //MARK: Apis Call
@@ -70,17 +87,20 @@ extension ImageListingViewController
     private func searchRecords(searchString:String)
     {
         self.viewModel.searchImages(searchString: searchString)
-        self.viewModel.searchImagesResponse = { (images,success,error) in
+        self.viewModel.searchImagesResponse = { [weak self](images,success,error) in
             DispatchQueue.main.async {
-                self.searchTextField.stopLoadingIndicator()
+                
+                //Error Handling
                 if success {
                     guard let records = images else {
                         return
                     }
-                    self.viewModel.records = records
-                    self.noRecordView.isHidden = !(self.viewModel.records?.isEmpty ?? false)
-                    self.reloadTable()
+                    self?.viewModel.records = records
+                }else{
+                    self?.showAlert(withMessage: error)
                 }
+                
+                self?.reloadTable()
             }
         }
     }

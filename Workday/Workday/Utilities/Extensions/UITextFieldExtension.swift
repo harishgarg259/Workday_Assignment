@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+//MARK: @IBInspectable
 extension UITextView {
 
     @IBInspectable var topPadding: CGFloat {
@@ -55,5 +57,16 @@ extension UITextView {
                                              bottom: self.contentInset.bottom,
                                              right: newValue)
         }
+    }
+}
+
+//MARK: Extended Functions
+extension UITextField {
+    
+    func hasText() -> Bool{
+        guard let criteria = self.text, !criteria.isEmpty ,!criteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return false
+        }
+        return true
     }
 }
