@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Search Images View Controller-->
+        <!--Image Listing View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchImagesViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ImageListingViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,6 +156,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5O-dh-Qmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="-2.1126760563380285"/>
+        </scene>
+        <!--Image Listing View Controller-->
+        <scene sceneID="b1O-k9-sa8">
+            <objects>
+                <viewController id="DEJ-e4-GP6" customClass="ImageListingViewController" customModule="Workday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gld-wj-EKd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBn-FI-sK9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUx-Zx-E4I">
+                                        <rect key="frame" x="16" y="55" width="361" height="738"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No Images Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-uh-9ep">
+                                                <rect key="frame" x="30" y="278" width="207" height="22.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="19"/>
+                                                <color key="textColor" name="greyLight"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Search with another keywords." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-pk-TTp">
+                                                <rect key="frame" x="30" y="310.33333333333326" width="207" height="17.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                                                <color key="textColor" name="greyLight"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zVP-uh-9ep" firstAttribute="leading" secondItem="JUx-Zx-E4I" secondAttribute="leading" constant="30" id="7Yt-ID-l2O"/>
+                                            <constraint firstAttribute="trailing" secondItem="iaE-pk-TTp" secondAttribute="trailing" constant="30" id="MMB-OA-vQS"/>
+                                            <constraint firstItem="zVP-uh-9ep" firstAttribute="centerY" secondItem="JUx-Zx-E4I" secondAttribute="centerY" constant="-80" id="OsF-Kq-8LY"/>
+                                            <constraint firstItem="iaE-pk-TTp" firstAttribute="top" secondItem="zVP-uh-9ep" secondAttribute="bottom" constant="10" id="RZJ-fM-5Vv"/>
+                                            <constraint firstAttribute="trailing" secondItem="zVP-uh-9ep" secondAttribute="trailing" constant="30" id="Rut-OX-fau"/>
+                                            <constraint firstItem="iaE-pk-TTp" firstAttribute="leading" secondItem="JUx-Zx-E4I" secondAttribute="leading" constant="30" id="ZZa-dt-CHY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tc7-sm-CH3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TBn-FI-sK9" firstAttribute="top" secondItem="tc7-sm-CH3" secondAttribute="top" id="1ez-ga-Jo1"/>
+                            <constraint firstAttribute="trailing" secondItem="TBn-FI-sK9" secondAttribute="trailing" id="6Oj-ft-W02"/>
+                            <constraint firstAttribute="bottom" secondItem="TBn-FI-sK9" secondAttribute="bottom" id="bhQ-GU-8G0"/>
+                            <constraint firstItem="TBn-FI-sK9" firstAttribute="leading" secondItem="Gld-wj-EKd" secondAttribute="leading" id="zDL-gi-FX9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kTy-XP-d2T"/>
+                    <connections>
+                        <outlet property="noRecordView" destination="JUx-Zx-E4I" id="H8r-l0-T8k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgd-Oz-ara" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868" y="-2"/>
         </scene>
     </scenes>
     <resources>

@@ -20,13 +20,10 @@ class RestManager<T: Codable> {
     
     // MARK: - Public Methods
     func makeRequest(request : URLRequest, completion: @escaping (_ result: Result<T>) -> Void) {
-
-        var urlRequest = request
       
         DispatchQueue.global(qos: .background).async {
-            
             /*HTTP REQUEST*/
-            let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 DispatchQueue.main.async {
                     guard let response = response as? HTTPURLResponse else {
                         if (error?.localizedDescription) != nil {
@@ -39,7 +36,6 @@ class RestManager<T: Codable> {
                     
                     /*RESPONSE*/
                     /***********************************************/
-                    var statusCode : Int = response.statusCode
                     if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)  {
                         print("response: \(json)")
                         print("URL: \(request.url?.absoluteString ?? "")")
@@ -54,7 +50,7 @@ class RestManager<T: Codable> {
                         }
                     }
                     
-                    switch statusCode  {
+                    switch response.statusCode {
                     case (200..<300):
                         guard let model = Response<T>().parceModel(data: data) else {
                             completion(.failure(WebError.parse))

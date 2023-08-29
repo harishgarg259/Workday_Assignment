@@ -62,6 +62,7 @@
                         <constraints>
                             <constraint firstItem="onN-5v-bY1" firstAttribute="top" secondItem="SBo-FS-Kac" secondAttribute="top" constant="16" id="9bK-tm-fxI"/>
                             <constraint firstItem="Vof-dq-1xA" firstAttribute="leading" secondItem="onN-5v-bY1" secondAttribute="trailing" constant="16" id="H0F-CZ-ysc"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Vof-dq-1xA" secondAttribute="bottom" priority="999" constant="16" id="Jt0-ft-M0c"/>
                             <constraint firstItem="rWW-aU-e9j" firstAttribute="leading" secondItem="onN-5v-bY1" secondAttribute="trailing" constant="16" id="K4u-VQ-4iF"/>
                             <constraint firstItem="Vof-dq-1xA" firstAttribute="top" secondItem="rWW-aU-e9j" secondAttribute="bottom" constant="5" id="KdA-yd-HWI"/>
                             <constraint firstItem="onN-5v-bY1" firstAttribute="leading" secondItem="SBo-FS-Kac" secondAttribute="leading" constant="16" id="aYg-gy-gDy"/>

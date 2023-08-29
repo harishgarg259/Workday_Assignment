@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchImagesViewController: UIViewController {
+class ImageListingViewController: UIViewController {
 
     //MARK: IBoutlets
     @IBOutlet weak var searchTextField: SearchTextField!
@@ -15,8 +15,7 @@ class SearchImagesViewController: UIViewController {
     @IBOutlet weak var noRecordView: UIView!
     
     //MARK: Variables
-    var viewModel = SearchImageViewModel()
-    var records: [Items]?
+    let viewModel = SearchImageViewModel()
     
     //MARK: Class Life Cycle
     override func viewDidLoad() {
@@ -26,44 +25,49 @@ class SearchImagesViewController: UIViewController {
 }
 
 // MARK: Private Default Methods
-extension SearchImagesViewController {
+extension ImageListingViewController {
     
     private func setupUI() {
         setupNavigationBar()
         configureTableView()
     }
     
-    func setupNavigationBar() {
+    private func setupNavigationBar() {
        
+        //Set title
         self.title = "Search Images"
+        
+        //Set media type Search
+        self.viewModel.mediaType = .Video
 
-        searchTextField.userStoppedTypingHandler = {
-            if let criteria = self.searchTextField.text {
+        //Search field callback
+        searchTextField.userStoppedTypingHandler = { [weak self] in
+            if let criteria = self?.searchTextField.text {
                 if criteria.isEmpty || criteria.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    self.records?.removeAll()
-                    self.reloadTable()
+                    self?.viewModel.records?.removeAll()
+                    self?.reloadTable()
                 } else if criteria.count > AppConstants.searchCharacterLimit {
                     // Show loading indicator
-                    self.searchTextField.showLoadingIndicator()
-                    self.searchRecords(searchString: criteria)
+                    self?.searchTextField.showLoadingIndicator()
+                    self?.searchRecords(searchString: criteria)
                 }
             }
         } as (() -> Void)
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         searchedImagesTableView.registerCell(ImageDetailCell.self)
     }
     
-    func reloadTable(){
+    private func reloadTable(){
         self.searchedImagesTableView.reloadData()
     }
 }
 
 //MARK: Apis Call
-extension SearchImagesViewController
+extension ImageListingViewController
 {
-    func searchRecords(searchString:String)
+    private func searchRecords(searchString:String)
     {
         self.viewModel.searchImages(searchString: searchString)
         self.viewModel.searchImagesResponse = { (images,success,error) in
@@ -73,8 +77,8 @@ extension SearchImagesViewController
                     guard let records = images else {
                         return
                     }
-                    self.records = records
-                    self.noRecordView.isHidden = !(self.records?.isEmpty ?? false)
+                    self.viewModel.records = records
+                    self.noRecordView.isHidden = !(self.viewModel.records?.isEmpty ?? false)
                     self.reloadTable()
                 }
             }

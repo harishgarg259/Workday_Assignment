@@ -7,18 +7,21 @@
 
 import Foundation
 import UIKit
-extension SearchImagesViewController:UITableViewDelegate,UITableViewDataSource{
+
+//MARK: UITableViewDelegate
+extension ImageListingViewController:UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.records?.count ?? 0
+        self.viewModel.records?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ImageDetailCell.nameId, for: indexPath) as! ImageDetailCell
-        cell.configureCell(self.records?[indexPath.row])
+        cell.configureCell(self.viewModel.records?[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        160.0
+        160
     }
 }
