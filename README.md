@@ -8,9 +8,9 @@ Manual -- Download the source code and run in xcode. [Recommended xcode version 
 # Architecture
 MVVM Pattern
   1. Application Layer - Its include Defaults Xcode files.
-  2. Presentation Layer - functional code of search images and detail screen.
+  2. Presentation Layer - Functional code of search images and detail screen.
   3. Network Layer - HTTPS request handling.
-  4. Utilities -- extensions and supporting classses.
+  4. Utilities -- Extensions and supporting classses.
 
 
 # Documents
