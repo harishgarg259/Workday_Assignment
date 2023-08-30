@@ -9,53 +9,27 @@ import UIKit
 
 
 //MARK: @IBInspectable
-extension UITextView {
+extension UITextField {
 
-    @IBInspectable var topPadding: CGFloat {
+    @IBInspectable var paddingLeftCustom: CGFloat {
         get {
-            return contentInset.top
+            return leftView?.frame.size.width ?? 0
         }
         set {
-            self.contentInset = UIEdgeInsets(top: newValue,
-                                             left: self.contentInset.left,
-                                             bottom: self.contentInset.bottom,
-                                             right: self.contentInset.right)
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
+            leftView = paddingView
+            leftViewMode = .always
         }
     }
-
-    @IBInspectable var bottomPadding: CGFloat {
+    
+    @IBInspectable var paddingRightCustom: CGFloat {
         get {
-            return contentInset.bottom
+            return rightView?.frame.size.width ?? 0
         }
         set {
-            self.contentInset = UIEdgeInsets(top: self.contentInset.top,
-                                             left: self.contentInset.left,
-                                             bottom: newValue,
-                                             right: self.contentInset.right)
-        }
-    }
-
-    @IBInspectable var leftPadding: CGFloat {
-        get {
-            return contentInset.left
-        }
-        set {
-            self.contentInset = UIEdgeInsets(top: self.contentInset.top,
-                                             left: newValue,
-                                             bottom: self.contentInset.bottom,
-                                             right: self.contentInset.right)
-        }
-    }
-
-    @IBInspectable var rightPadding: CGFloat {
-        get {
-            return contentInset.right
-        }
-        set {
-            self.contentInset = UIEdgeInsets(top: self.contentInset.top,
-                                             left: self.contentInset.left,
-                                             bottom: self.contentInset.bottom,
-                                             right: newValue)
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
+            rightView = paddingView
+            rightViewMode = .always
         }
     }
 }

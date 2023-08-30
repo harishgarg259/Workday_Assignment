@@ -21,37 +21,50 @@ class ImageLoader {
         return Static.instance
     }
     
-	func imageForUrl(urlString: String, completionHandler: @escaping (_ image: UIImage?, _ url: String) -> ()) {
+	func imageForUrl(urlString: String?, placeholder: String, completionHandler: @escaping (_ image: UIImage?, _ url: String) -> ()) {
 		
+        let encodedURL = urlString?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+
 		DispatchQueue.global(qos: .background).async {
 		
-			let data: NSData? = self.cache.object(forKey: urlString as NSString) as? NSData
+            if encodedURL.isEmpty{
+                let placeHolderImage = UIImage(named: placeholder)
+                DispatchQueue.main.async {
+                    completionHandler(placeHolderImage, encodedURL)
+                }
+            }
+			let data: NSData? = self.cache.object(forKey: encodedURL as NSString) as? NSData
 			
 			if let goodData = data {
 				let image = UIImage(data: goodData as Data)
 				DispatchQueue.main.async {
-					completionHandler(image, urlString)
+					completionHandler(image, encodedURL)
 				}
 				return
 			}
 			
 			let session = URLSession.shared
-			let request = URLRequest(url: URL(string: urlString)!)
+			let request = URLRequest(url: URL(string: encodedURL)!)
 			
 			session.dataTask(with: request) { data, response, error in
 				
 				if (error != nil) {
-					completionHandler(nil, urlString)
+					completionHandler(nil, encodedURL)
 					return
 				}
 				
 				if let data = data{
 					let image = UIImage(data: data)
-					self.cache.setObject(data as AnyObject, forKey: urlString as NSString)
+					self.cache.setObject(data as AnyObject, forKey: encodedURL as NSString)
 					DispatchQueue.main.async {
-						completionHandler(image, urlString)
+						completionHandler(image, encodedURL)
 					}
-				}
+                }else{
+                    let placeHolderImage = UIImage(named: "logo")
+                    DispatchQueue.main.async {
+                        completionHandler(placeHolderImage, encodedURL)
+                    }
+                }
 			}.resume()
 			
 		}

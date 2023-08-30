@@ -9,7 +9,6 @@ import Foundation
 
 public enum WebError: Error {
     
-    case noInternetConnection
     case networkLost
     case timeout
     case invalidRequest(String)
@@ -22,8 +21,6 @@ extension WebError {
     
     var description: String {
         switch self {
-        case .noInternetConnection:
-            return "No Internet Connection."
         case .timeout:
             return "The request timed out."
         case .invalidRequest(let url):

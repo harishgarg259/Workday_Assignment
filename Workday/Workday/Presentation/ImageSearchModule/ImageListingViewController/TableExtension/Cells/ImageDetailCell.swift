@@ -26,25 +26,28 @@ class ImageDetailCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        //Set image to nil before reusing
-        self.searchedImageView.image = nil
+        //Set image to default before reusing
+        self.searchedImageView.image = UIImage(systemName: "photo")
         super.prepareForReuse()
     }
     
     //MARK: - Configure Cell
-    func configureCell(_ detail: Items?) {
-        self.titleLabel.text = detail?.data?[safe: 0]?.title ?? "Nasa's Image"
-        self.detailLabel.text = detail?.data?[safe: 0]?.description ?? "Image Description"
+    func configureCell(_ detail: Items?, mediaType: Media) {
         
-        //Check image url exist or not
-        guard let urlString = detail?.links?[safe: 0]?.href, !urlString.isEmpty else {
+        //Check if data exist or not
+        guard let data = detail?.filterData(type: mediaType) else {
             return
         }
-        //Encode the URL before laoding to avoid crash
-        let encodedURL = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        self.titleLabel.text = data.title ?? "Nasa's Image"
+//        let detailLabel = (data.description ?? "Image Description").prefix(100)
+        self.detailLabel.text = (data.description ?? "Image Description")
         
+        //Check image url exist or not
+        guard let link = detail?.filterLink(type: mediaType) else {
+            return
+        }
         //Load image using ImageLoader factory
-        ImageLoader.sharedLoader.imageForUrl(urlString: encodedURL, completionHandler:{(image: UIImage?, url: String) in
+        ImageLoader.sharedLoader.imageForUrl(urlString: link.href, placeholder: "logo", completionHandler:{(image: UIImage?, url: String) in
             self.searchedImageView.image = image
         })
     }

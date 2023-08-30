@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		38B385192A9DAF35001BED13 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B385182A9DAF35001BED13 /* ImageDetailViewController.swift */; };
 		38B3851B2A9DBA40001BED13 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3851A2A9DBA40001BED13 /* UIViewController.swift */; };
+		38B3851E2A9EB1A4001BED13 /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3851D2A9EB1A4001BED13 /* ImageDetailViewModel.swift */; };
+		38B385202A9EBB52001BED13 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3851F2A9EBB52001BED13 /* DateFormat.swift */; };
 		38F0F6A92A99E077002A1F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6A82A99E077002A1F3C /* AppDelegate.swift */; };
 		38F0F6AB2A99E077002A1F3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6AA2A99E077002A1F3C /* SceneDelegate.swift */; };
 		38F0F6AD2A99E077002A1F3C /* ImageListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6AC2A99E077002A1F3C /* ImageListingViewController.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		38B385182A9DAF35001BED13 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		38B3851A2A9DBA40001BED13 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		38B3851D2A9EB1A4001BED13 /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
+		38B3851F2A9EBB52001BED13 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		38F0F6A52A99E077002A1F3C /* Workday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0F6A82A99E077002A1F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F0F6AA2A99E077002A1F3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,14 @@
 				38B385182A9DAF35001BED13 /* ImageDetailViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		38B3851C2A9EB1A4001BED13 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				38B3851D2A9EB1A4001BED13 /* ImageDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		38F0F69C2A99E077002A1F3C = {
@@ -196,10 +208,10 @@
 		38F0F6D92A9C320B002A1F3C /* ImageListingViewController */ = {
 			isa = PBXGroup;
 			children = (
-				38F0F6DC2A9C3249002A1F3C /* ViewController */,
-				38F0F6EC2A9C4E72002A1F3C /* TableExtension */,
-				38F0F6DB2A9C3240002A1F3C /* ViewModel */,
 				38F0F6DA2A9C3238002A1F3C /* Model */,
+				38F0F6DB2A9C3240002A1F3C /* ViewModel */,
+				38F0F6EC2A9C4E72002A1F3C /* TableExtension */,
+				38F0F6DC2A9C3249002A1F3C /* ViewController */,
 			);
 			path = ImageListingViewController;
 			sourceTree = "<group>";
@@ -252,6 +264,7 @@
 				38F0F6EA2A9C4B63002A1F3C /* UITextFieldExtension.swift */,
 				38F0F6F42A9C5317002A1F3C /* Array.swift */,
 				38F0F6FD2A9C545E002A1F3C /* UITableView.swift */,
+				38B3851F2A9EBB52001BED13 /* DateFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -285,6 +298,7 @@
 		38F0F7022A9DA2E8002A1F3C /* ImageDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
+				38B3851C2A9EB1A4001BED13 /* ViewModel */,
 				38B385172A9DAF19001BED13 /* ViewController */,
 			);
 			path = ImageDetailScreen;
@@ -400,7 +414,9 @@
 				38F0F6FE2A9C545E002A1F3C /* UITableView.swift in Sources */,
 				38F0F6EE2A9C4ECD002A1F3C /* ImageTableExtension.swift in Sources */,
 				38F0F6CF2A9C292F002A1F3C /* RequestUrl.swift in Sources */,
+				38B385202A9EBB52001BED13 /* DateFormat.swift in Sources */,
 				38F0F6F32A9C4FA5002A1F3C /* ImageDetailCell.swift in Sources */,
+				38B3851E2A9EB1A4001BED13 /* ImageDetailViewModel.swift in Sources */,
 				38F0F7012A9C57FA002A1F3C /* ImageLoader.swift in Sources */,
 				38F0F6E22A9C3F49002A1F3C /* SearchImageViewModel.swift in Sources */,
 				38F0F6A92A99E077002A1F3C /* AppDelegate.swift in Sources */,

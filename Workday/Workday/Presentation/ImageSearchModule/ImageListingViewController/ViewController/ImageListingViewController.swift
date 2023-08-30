@@ -35,12 +35,12 @@ extension ImageListingViewController {
     }
     
     private func setupNavigationBar() {
-       
+        
         //Set title
         self.title = "Search Images"
         
         //Set media type Search
-        self.viewModel.mediaType = .Video
+        self.viewModel.mediaType = .Image
 
         //Search field callback
         searchTextField.userStoppedTypingHandler = { [weak self] in
@@ -86,8 +86,7 @@ extension ImageListingViewController
 {
     private func searchRecords(searchString:String)
     {
-        self.viewModel.searchImages(searchString: searchString)
-        self.viewModel.searchImagesResponse = { [weak self](images,success,error) in
+        self.viewModel.searchImages(searchString: searchString) { [weak self](images,success,error) in
             DispatchQueue.main.async {
                 
                 //Error Handling

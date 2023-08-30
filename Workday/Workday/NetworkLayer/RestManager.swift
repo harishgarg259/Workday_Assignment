@@ -21,6 +21,12 @@ class RestManager<T: Codable> {
     // MARK: - Public Methods
     func makeRequest(request : URLRequest, completion: @escaping (_ result: Result<T>) -> Void) {
       
+        //Return if mobile is not connected with the internet
+        if !isConnectedToNetwork() {
+            completion(.failure(.networkLost))
+            return
+        }
+        
         DispatchQueue.global(qos: .background).async {
             /*HTTP REQUEST*/
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

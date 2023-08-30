@@ -27,6 +27,17 @@ struct Items : Codable {
     let href : String?
     let data : [Details]?
     let links : [Links]?
+    
+    func filterData(type: Media) -> Details?{
+        let data = self.data?.filter({ $0.media_type == type.media}).first
+        return data
+    }
+    
+    func filterLink(type: Media) -> Links?{
+        let data = self.links?.filter({ $0.render == Media.Image.media}).first
+        return data
+    }
+    
 }
 
 struct Metadata : Codable {
@@ -47,4 +58,5 @@ struct Links : Codable {
     let rel : String?
     let prompt : String?
     let href : String?
+    let render : String?
 }
