@@ -9,7 +9,7 @@ import Foundation
 
 struct AppConstants {
     
-    static let limitPerPage: String = "20"
+    static let limitPerPage: String = "50"
     static let searchCharacterLimit: Int = 1
     
 }

@@ -22,12 +22,10 @@ extension String {
         
         let date: Date? = dateFormatterGet.date(from: self)
         if let date = date{
-            print("Date",dateFormatterPrint.string(from: date))
             return dateFormatterPrint.string(from: date);
         }else
         {
             //Return Current Date
-            print("Date",dateFormatterPrint.string(from: Date()))
             return dateFormatterPrint.string(from: Date());
         }
     }

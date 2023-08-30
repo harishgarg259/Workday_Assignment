@@ -18,24 +18,9 @@ extension Reusable where Self: UITableViewCell {
     }
 }
 
-
 extension UITableView {
-    func reloadOnMainThread() {
-        DispatchQueue.main.async {
-            self.reloadData()
-        }
-    }
-    func registerCellClass<Cell: UITableViewCell>(_ cellClass: Cell.Type) {
-        register(cellClass, forCellReuseIdentifier: cellClass.nameId)
-    }
     
     func registerCell<Cell: UITableViewCell>(_ cellClass: Cell.Type) {
         register(UINib(nibName: cellClass.nameId, bundle: nil), forCellReuseIdentifier: cellClass.nameId)
-    }
-    
-    func registerCellClasses<Cell: UITableViewCell>(_ cellClasses: [Cell.Type]) {
-        for cellClass in cellClasses {
-            register(UINib(nibName: cellClass.nameId, bundle: nil), forCellReuseIdentifier: cellClass.nameId)
-        }
     }
 }

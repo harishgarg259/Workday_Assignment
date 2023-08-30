@@ -11,7 +11,7 @@ class ImageListingViewController: UIViewController {
 
     //MARK: IBoutlets
     @IBOutlet weak var searchTextField: SearchTextField!
-    @IBOutlet weak var searchedImagesTableView: UITableView!
+    @IBOutlet weak var searchedImagesTableView: PagingTableView!
     @IBOutlet weak var noRecordView: UIView!
     
     //MARK: Variables
@@ -41,16 +41,19 @@ extension ImageListingViewController {
         
         //Set media type Search
         self.viewModel.mediaType = .Image
+        
+        //Setup Pagination Delegates
+        searchedImagesTableView.pagingDelegate = self
 
         //Search field callback
         searchTextField.userStoppedTypingHandler = { [weak self] in
             if self?.searchTextField.hasText() ?? false {
                 // Fetch record from API
                 self?.searchTextField.showLoadingIndicator()
-                self?.searchRecords(searchString: self?.searchTextField.text ?? "")
+                self?.searchRecords(searchString: self?.searchTextField.text ?? "", page: 1)
             }else{
-                self?.viewModel.records?.removeAll()
-                self?.reloadTable()
+                self?.viewModel.records.removeAll()
+                self?.reloadView()
             }
         } as (() -> Void)
     }
@@ -59,8 +62,9 @@ extension ImageListingViewController {
         searchedImagesTableView.registerCell(ImageDetailCell.self)
     }
     
-    private func reloadTable(){
-        self.noRecordView.isHidden = (self.searchTextField.text?.isEmpty ?? true) ? true : !(self.viewModel.records?.isEmpty ?? false)
+    private func reloadView(){
+        searchedImagesTableView.isLoading = false
+        self.noRecordView.isHidden = (self.searchTextField.text?.isEmpty ?? true) ? true : !self.viewModel.records.isEmpty
         self.refreshControl.endRefreshing()
         self.searchedImagesTableView.reloadData()
         self.searchTextField.stopLoadingIndicator()
@@ -73,7 +77,7 @@ extension ImageListingViewController {
     
     @objc func refreshSearchData(refreshControl: UIRefreshControl) {
         if self.searchTextField.hasText() {
-            searchRecords(searchString: self.searchTextField.text ?? "")
+            searchRecords(searchString: self.searchTextField.text ?? "", page: 1)
         }else{
             self.refreshControl.endRefreshing()
         }
@@ -84,23 +88,35 @@ extension ImageListingViewController {
 //MARK: Apis Call
 extension ImageListingViewController
 {
-    private func searchRecords(searchString:String)
+    private func searchRecords(searchString:String, page: Int)
     {
-        self.viewModel.searchImages(searchString: searchString) { [weak self](images,success,error) in
+        //Check if it a fresh request then reset page and current count
+        if page == 1{
+            searchedImagesTableView.resetCount()
+        }
+        
+        self.viewModel.searchImages(searchString: searchString, page: page) { [weak self](images,success,error) in
             DispatchQueue.main.async {
-                
-                //Error Handling
-                if success {
-                    guard let records = images else {
-                        return
-                    }
-                    self?.viewModel.records = records
-                }else{
+                //Error Alert
+                if !success {
                     self?.showAlert(withMessage: error)
                 }
-                
-                self?.reloadTable()
+                self?.reloadView()
             }
         }
     }
+}
+
+//MARK: PagingTableViewDelegate
+extension ImageListingViewController: PagingTableViewDelegate {
+    
+    func paginate(_ tableView: PagingTableView, to page: Int) {
+        if self.searchTextField.hasText() {
+            searchedImagesTableView.isLoading = true
+            searchRecords(searchString: self.searchTextField.text ?? "", page: page + 1)
+        }else{
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
 }

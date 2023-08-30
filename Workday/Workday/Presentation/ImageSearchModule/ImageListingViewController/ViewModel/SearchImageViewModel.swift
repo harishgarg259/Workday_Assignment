@@ -31,18 +31,23 @@ class SearchImageViewModel{
     
     //MARK: Variables
     var mediaType: Media = .Image
-    var records: [Items]?
+    var records = [Items]()
     
     
     // MARK: Apis Call
-    func searchImages(searchString: String, completion: (([Items]?,Bool,String) -> Void)?) {
-        let parameters = ["page":"1","page_size":AppConstants.limitPerPage,"q":searchString,"media_type":mediaType.media]
+    func searchImages(searchString: String, page: Int, completion: (([Items]?,Bool,String) -> Void)?) {
+        let parameters = ["page":"\(page)","page_size": AppConstants.limitPerPage,"q":searchString,"media_type":mediaType.media]
         let rest = RestManager<SearchNasaImageBase>()
         rest.makeRequest(request : WebAPI().createNasaRequest(params : parameters, type: .searchImages)!) { (result) in
             switch result {
             case .success(let response):
                 debugPrint(response)
-                completion?(response.collection?.items,true,"")
+                //Check if it a fresh request then remove old records from the array
+                if page == 1{
+                    self.records.removeAll()
+                }
+                self.records.append(contentsOf: response.collection?.items ?? [])
+                completion?(self.records,true,"")
             case .failure(let error):
                 debugPrint(error.localizedDescription)
                 completion?(nil,false,error.localizedDescription)

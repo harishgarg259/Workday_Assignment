@@ -11,6 +11,7 @@
 		38B3851B2A9DBA40001BED13 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3851A2A9DBA40001BED13 /* UIViewController.swift */; };
 		38B3851E2A9EB1A4001BED13 /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3851D2A9EB1A4001BED13 /* ImageDetailViewModel.swift */; };
 		38B385202A9EBB52001BED13 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B3851F2A9EBB52001BED13 /* DateFormat.swift */; };
+		38EFB5982A9EF54800AF12D4 /* PagingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFB5962A9EF54800AF12D4 /* PagingTableView.swift */; };
 		38F0F6A92A99E077002A1F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6A82A99E077002A1F3C /* AppDelegate.swift */; };
 		38F0F6AB2A99E077002A1F3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6AA2A99E077002A1F3C /* SceneDelegate.swift */; };
 		38F0F6AD2A99E077002A1F3C /* ImageListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F0F6AC2A99E077002A1F3C /* ImageListingViewController.swift */; };
@@ -52,6 +53,7 @@
 		38B3851A2A9DBA40001BED13 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		38B3851D2A9EB1A4001BED13 /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
 		38B3851F2A9EBB52001BED13 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		38EFB5962A9EF54800AF12D4 /* PagingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingTableView.swift; sourceTree = "<group>"; };
 		38F0F6A52A99E077002A1F3C /* Workday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F0F6A82A99E077002A1F3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38F0F6AA2A99E077002A1F3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 				38B3851D2A9EB1A4001BED13 /* ImageDetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		38EFB5952A9EF53300AF12D4 /* PaginationTableView */ = {
+			isa = PBXGroup;
+			children = (
+				38EFB5962A9EF54800AF12D4 /* PagingTableView.swift */,
+			);
+			path = PaginationTableView;
 			sourceTree = "<group>";
 		};
 		38F0F69C2A99E077002A1F3C = {
@@ -197,6 +207,7 @@
 		38F0F6D62A9C2FD5002A1F3C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				38EFB5952A9EF53300AF12D4 /* PaginationTableView */,
 				38F0F6FF2A9C57DC002A1F3C /* ImageLoader */,
 				38F0F6E72A9C4A7E002A1F3C /* Extensions */,
 				38F0F6E42A9C40C3002A1F3C /* Constant */,
@@ -407,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F0F6E92A9C4A8E002A1F3C /* UIView.swift in Sources */,
+				38EFB5982A9EF54800AF12D4 /* PagingTableView.swift in Sources */,
 				38F0F6D82A9C2FF4002A1F3C /* AppConstant.swift in Sources */,
 				38F0F6AD2A99E077002A1F3C /* ImageListingViewController.swift in Sources */,
 				38F0F6F52A9C5317002A1F3C /* Array.swift in Sources */,
