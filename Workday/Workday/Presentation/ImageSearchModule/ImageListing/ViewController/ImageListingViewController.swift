@@ -95,7 +95,7 @@ extension ImageListingViewController
             searchedImagesTableView.resetCount()
         }
         
-        self.viewModel.searchImages(searchString: searchString, page: page) { [weak self](images,success,error) in
+        self.viewModel.searchImages(searchString: searchString, page: page) { [weak self] (success,error) in
             DispatchQueue.main.async {
                 //Error Alert
                 if !success {

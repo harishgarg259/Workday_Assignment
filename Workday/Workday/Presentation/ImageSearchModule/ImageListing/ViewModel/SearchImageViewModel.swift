@@ -35,7 +35,7 @@ class SearchImageViewModel{
     
     
     // MARK: Apis Call
-    func searchImages(searchString: String, page: Int, completion: (([Items]?,Bool,String) -> Void)?) {
+    func searchImages(searchString: String, page: Int, completion: ((Bool,String) -> Void)?) {
         let parameters = ["page":"\(page)","page_size": AppConstants.limitPerPage,"q":searchString,"media_type":mediaType.media]
         let rest = RestManager<SearchNasaImageBase>()
         rest.makeRequest(request : WebAPI().createNasaRequest(params : parameters, type: .searchImages)!) { (result) in
@@ -47,10 +47,10 @@ class SearchImageViewModel{
                     self.records.removeAll()
                 }
                 self.records.append(contentsOf: response.collection?.items ?? [])
-                completion?(self.records,true,"")
+                completion?(true,"")
             case .failure(let error):
                 debugPrint(error.localizedDescription)
-                completion?(nil,false,error.localizedDescription)
+                completion?(false,error.localizedDescription)
             }
         }
     }

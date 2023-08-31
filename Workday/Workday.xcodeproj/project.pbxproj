@@ -105,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				38F0F6AE2A99E077002A1F3C /* Main.storyboard */,
-				38F0F6D92A9C320B002A1F3C /* ImageListingViewController */,
+				38F0F6D92A9C320B002A1F3C /* ImageListing */,
 				38F0F7022A9DA2E8002A1F3C /* ImageDetailScreen */,
 			);
 			path = ImageSearchModule;
@@ -216,7 +216,7 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		38F0F6D92A9C320B002A1F3C /* ImageListingViewController */ = {
+		38F0F6D92A9C320B002A1F3C /* ImageListing */ = {
 			isa = PBXGroup;
 			children = (
 				38F0F6DA2A9C3238002A1F3C /* Model */,
@@ -224,7 +224,7 @@
 				38F0F6EC2A9C4E72002A1F3C /* TableExtension */,
 				38F0F6DC2A9C3249002A1F3C /* ViewController */,
 			);
-			path = ImageListingViewController;
+			path = ImageListing;
 			sourceTree = "<group>";
 		};
 		38F0F6DA2A9C3238002A1F3C /* Model */ = {
