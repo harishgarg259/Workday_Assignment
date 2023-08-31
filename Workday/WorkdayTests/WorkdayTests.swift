@@ -21,7 +21,7 @@ final class WorkdayTests: XCTestCase {
             switch result {
             case .success(let response):
                 XCTAssertNotNil(response)
-                XCTAssertEqual(response.collection?.items?[safe: 0]?.data?[safe: 0]?.title, "Sample Movie")
+                XCTAssertEqual(response.collection?.items?[safe: 0]?.data?[safe: 0]?.title, "APOLLO 50th_FULL COLOR_300DPI")
             case .failure(let error):
                 XCTFail("Error: \(error.localizedDescription)")
             }
@@ -35,7 +35,7 @@ final class WorkdayTests: XCTestCase {
         
         //Arrange
         let rest = RestManager<SearchNasaImageBase>()
-        let parameters = ["page":"\(500)","page_size": AppConstants.limitPerPage,"query":"apollo","media_type":""]
+        let parameters = ["page":"\(500)","page_size": AppConstants.limitPerPage,"query":"23423423423","media_type":"image"]
         let expectation = self.expectation(description: "invalid_searchQuery")
         rest.makeRequest(request : WebAPI().createNasaRequest(params : parameters, type: .searchImages)!) { (result) in
                         
