@@ -37,7 +37,8 @@ extension ImageListingViewController {
     private func setupNavigationBar() {
         
         //Set title
-        self.title = "Search Images"
+        self.title = "search_screen_title".localized
+        searchTextField.becomeFirstResponder()
         
         //Set media type Search
         self.viewModel.mediaType = .Image

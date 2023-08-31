@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Workday
+
+  Created by Harish Garg on 31/08/23.
+  
+*/
+
+//Search Screen
+"search_screen_title" = "Rechercher des images";
+
+//Detail Screen
+"image_detail_title" = "Détail de l'image";

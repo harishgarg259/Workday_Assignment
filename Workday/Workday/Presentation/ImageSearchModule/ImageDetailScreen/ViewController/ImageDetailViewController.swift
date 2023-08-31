@@ -37,7 +37,7 @@ extension ImageDetailViewController {
     
     private func setupNavigationBar() {
         //Set title
-        self.title = "Image Detail"
+        self.title = "image_detail_title".localized
     }
     
     private func configureImageDetail() {

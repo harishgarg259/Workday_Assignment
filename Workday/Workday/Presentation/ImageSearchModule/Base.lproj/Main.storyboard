@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eex-dJ-Guc">
-                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Search images by name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPm-H3-YNc" customClass="SearchTextField" customModule="Workday" customModuleProvider="target">
                                         <rect key="frame" x="16" y="10" width="361" height="44"/>
@@ -58,8 +58,8 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="b9Y-F4-jSP"/>
                                         </connections>
                                     </textField>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-jk-e5s" customClass="PagingTableView" customModule="Workday" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="54" width="361" height="695"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FFa-jk-e5s" customClass="PagingTableView" customModule="Workday" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="54" width="361" height="661"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dataSource" destination="BYZ-38-t0r" id="C7f-oh-8sO"/>
@@ -67,16 +67,16 @@
                                         </connections>
                                     </tableView>
                                     <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIk-FD-lkM">
-                                        <rect key="frame" x="16" y="55" width="361" height="694"/>
+                                        <rect key="frame" x="16" y="55" width="361" height="660"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Images Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATF-Se-EHk">
-                                                <rect key="frame" x="30" y="256" width="301" height="22.333333333333314"/>
+                                                <rect key="frame" x="30" y="239" width="301" height="22.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="19"/>
                                                 <color key="textColor" name="greyLight"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search with another keywords." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEa-Lr-gxX">
-                                                <rect key="frame" x="30" y="288.33333333333331" width="301" height="17.666666666666686"/>
+                                                <rect key="frame" x="30" y="271.33333333333331" width="301" height="17.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
                                                 <color key="textColor" name="greyLight"/>
                                                 <nil key="highlightedColor"/>
@@ -123,7 +123,7 @@
                         <viewLayoutGuide key="safeArea" id="dVE-DW-c1n"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="eex-dJ-Guc" secondAttribute="bottom" id="BW6-am-xKR"/>
+                            <constraint firstItem="dVE-DW-c1n" firstAttribute="bottom" secondItem="eex-dJ-Guc" secondAttribute="bottom" id="BW6-am-xKR"/>
                             <constraint firstItem="dVE-DW-c1n" firstAttribute="trailing" secondItem="eex-dJ-Guc" secondAttribute="trailing" id="M0b-kv-ofu"/>
                             <constraint firstItem="eex-dJ-Guc" firstAttribute="leading" secondItem="dVE-DW-c1n" secondAttribute="leading" id="dcP-kv-P9f"/>
                             <constraint firstItem="eex-dJ-Guc" firstAttribute="top" secondItem="dVE-DW-c1n" secondAttribute="top" id="fmg-5g-KU4"/>
