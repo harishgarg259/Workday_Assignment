@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "1l0-ZH-jBW"; */
+"1l0-ZH-jBW.text" = "Date";
+
+/* Class = "UILabel"; text = "No Images Found"; ObjectID = "ATF-Se-EHk"; */
+"ATF-Se-EHk.text" = "No Images Found";
+
+/* Class = "UIViewController"; title = "Search Images"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Search Images";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "DEJ-e4-GP6"; */
+"DEJ-e4-GP6.title" = "Detail";
+
+/* Class = "UILabel"; text = "Search with another keywords."; ObjectID = "DEa-Lr-gxX"; */
+"DEa-Lr-gxX.text" = "Search with another keywords.";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "OEG-QN-xbU"; */
+"OEG-QN-xbU.text" = "Title";
+
+/* Class = "UITextField"; placeholder = "Search images by name"; ObjectID = "SPm-H3-YNc"; */
+"SPm-H3-YNc.placeholder" = "Search images by name";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "cEI-3E-Eyr"; */
+"cEI-3E-Eyr.text" = "Description";
